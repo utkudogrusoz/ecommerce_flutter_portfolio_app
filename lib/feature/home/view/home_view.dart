@@ -1,3 +1,4 @@
+import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 part './sub_view/home_collection_card_container.dart';
 part './sub_view/home_collection_card_title.dart';
@@ -7,8 +8,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double? collectionSize = MediaQuery.of(context).size.height -
-        (MediaQuery.of(context).size.height * 8 / 100);
+    final double? collectionSize = context.height - (context.height * 8 / 100);
 
     return Scaffold(
       body: Container(
@@ -100,8 +100,7 @@ class HomeView extends StatelessWidget {
                           _HomeCollectionCardContainer(
                             color: Colors.white,
                             imageUrl:
-                                MediaQuery.of(context).platformBrightness ==
-                                        Brightness.dark
+                                context.platformBrightness == Brightness.dark
                                     ? 'hoodie_dark.png'
                                     : 'hoodie.png',
                           ),
@@ -111,7 +110,7 @@ class HomeView extends StatelessWidget {
                             top: collectionSize! / 5,
                             child: _HomeCollectionCardTitle(
                               title:
-                                  "Men's ${MediaQuery.of(context).platformBrightness == Brightness.dark ? 'hats' : 'hoodies'}",
+                                  "Men's ${context.platformBrightness == Brightness.dark ? 'hats' : 'hoodies'}",
                               titleColor: Colors.white,
                             ),
                           )

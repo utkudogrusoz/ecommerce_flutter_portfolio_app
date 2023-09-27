@@ -1,3 +1,4 @@
+import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -10,20 +11,19 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         elevation: const MaterialStatePropertyAll(4),
-        textStyle: Theme.of(context).textButtonTheme.style!.textStyle,
+        textStyle: context.textButtonTheme.style!.textStyle,
         shadowColor:
             MaterialStatePropertyAll(Theme.of(context).colorScheme.primary),
         maximumSize: const MaterialStatePropertyAll(Size(343, 48)),
         minimumSize: const MaterialStatePropertyAll(Size(343, 48)),
-        backgroundColor:
-            MaterialStatePropertyAll(Theme.of(context).colorScheme.primary),
+        backgroundColor: MaterialStatePropertyAll(context.colorScheme.primary),
       ),
       onPressed: () {
         onPressed!();
       },
       child: Text(
         text ?? '',
-        style: Theme.of(context).textTheme.titleSmall,
+        style: context.textTheme.titleSmall,
       ),
     );
   }

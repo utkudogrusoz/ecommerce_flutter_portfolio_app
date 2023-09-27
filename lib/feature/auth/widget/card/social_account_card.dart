@@ -1,3 +1,4 @@
+import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 
 class SocialAccountCard extends StatelessWidget {
@@ -10,7 +11,7 @@ class SocialAccountCard extends StatelessWidget {
       width: 92,
       height: 64,
       decoration: BoxDecoration(
-        color: Theme.of(context).inputDecorationTheme.fillColor,
+        color: context.inputTheme.fillColor,
         borderRadius: const BorderRadius.all(
           Radius.circular(24),
         ),

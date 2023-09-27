@@ -5,6 +5,7 @@ import 'package:ecommerce_portolio_app/widget/text/auth_title_text.dart';
 import 'package:ecommerce_portolio_app/widget/textfield/auth_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
 
 final _authViewModel = ChangeNotifierProvider<AuthViewModel>((ref) {
   return AuthViewModel();
@@ -32,7 +33,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               title: const AuthTitleText(
                 title: 'Login',
               ),
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              backgroundColor: context.backgroundColor,
               elevation: 0,
               scrolledUnderElevation: 0,
               toolbarHeight: 50,
@@ -72,10 +73,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                           Text(
                             'Forgot your password?',
                             style: TextStyle(
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .color,
+                              color: context.textTheme.titleMedium!.color,
                               fontSize: 14,
                             ),
                           ),
@@ -84,7 +82,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                           ),
                           Icon(
                             Icons.arrow_right_alt_rounded,
-                            color: Theme.of(context).colorScheme.primary,
+                            color: context.colorScheme.primary,
                           )
                         ],
                       ),
@@ -108,7 +106,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     child: Text(
                       'Or login with social account',
                       style: TextStyle(
-                        color: Theme.of(context).textTheme.titleMedium!.color,
+                        color: context.textTheme.titleMedium!.color,
                         fontSize: 14,
                       ),
                     ),

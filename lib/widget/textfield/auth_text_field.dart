@@ -1,3 +1,4 @@
+import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -24,20 +25,6 @@ class _AuthTextFieldState extends ConsumerState<AuthTextField> {
         decoration: BoxDecoration(
           color: Theme.of(context).inputDecorationTheme.fillColor,
           borderRadius: const BorderRadius.all(Radius.circular(4)),
-          /* boxShadow: [
-            BoxShadow(
-              color: Theme.of(context).inputDecorationTheme.fillColor!,
-              offset: const Offset(1, 1),
-              blurRadius: 8,
-              blurStyle: BlurStyle.inner,
-            ),
-            BoxShadow(
-              color: Theme.of(context).inputDecorationTheme.fillColor!,
-              offset: const Offset(-1, -1),
-              blurRadius: 8,
-              blurStyle: BlurStyle.inner,
-            ),
-          ], */
         ),
         child: TextField(
           controller: widget.textEditingController,
@@ -49,7 +36,7 @@ class _AuthTextFieldState extends ConsumerState<AuthTextField> {
               ),
               child: Text(
                 widget.labelText!,
-                style: Theme.of(context).textTheme.labelSmall,
+                style: context.textTheme.labelSmall,
               ),
             ),
             alignLabelWithHint: true,
