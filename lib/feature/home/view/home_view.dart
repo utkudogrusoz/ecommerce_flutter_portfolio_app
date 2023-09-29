@@ -1,10 +1,15 @@
 import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
+import 'package:ecommerce_portolio_app/feature/home/widget/image/home_image_card.dart';
+import 'package:ecommerce_portolio_app/feature/home/widget/text/home_card_title.dart';
 import 'package:flutter/material.dart';
 part './sub_view/home_collection_card_container.dart';
-part './sub_view/home_collection_card_title.dart';
+part './sub_view/home_summer_sale_card.dart';
+part './sub_view/home_black_card.dart';
+part './sub_view/home_horizontal_card.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  const HomeView({this.homeCollectionTitle, super.key});
+  final String? homeCollectionTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -16,107 +21,28 @@ class HomeView extends StatelessWidget {
         color: Colors.white,
         child: Column(
           children: [
-            Expanded(
-              child: Stack(
-                children: [
-                  _HomeCollectionCardContainer(
-                    color: Colors.white,
-                    imageUrl: MediaQuery.of(context).platformBrightness ==
-                            Brightness.dark
-                        ? 'collection_dark.png'
-                        : 'collection.png',
-                  ),
-                  const Align(
-                    alignment: Alignment.bottomRight,
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: _HomeCollectionCardTitle(
-                        title: 'New collection',
-                        titleColor: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            _HomeCollectionCardContainer(
+              homeCollectionTitle: homeCollectionTitle,
+              color: Colors.white,
+              imageUrl:
+                  MediaQuery.of(context).platformBrightness == Brightness.dark
+                      ? 'collection_dark.png'
+                      : 'collection.png',
             ),
             Expanded(
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Column(
                         children: [
-                          Expanded(
-                            child: Stack(
-                              children: [
-                                _HomeCollectionCardContainer(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
-                                ),
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(16),
-                                    child: _HomeCollectionCardTitle(
-                                      title: 'Summer sale',
-                                      titleColor:
-                                          Theme.of(context).colorScheme.primary,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          const Expanded(
-                            child: Stack(
-                              children: [
-                                _HomeCollectionCardContainer(
-                                  color: Colors.white,
-                                  imageUrl: 'black.png',
-                                ),
-                                Align(
-                                  alignment: Alignment.bottomLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16,
-                                      vertical: 32,
-                                    ),
-                                    child: _HomeCollectionCardTitle(
-                                      title: 'Black',
-                                      titleColor: Colors.white,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
+                          _HomeSummerSaleCard(),
+                          _HomeBlackCard(),
                         ],
                       ),
                     ),
-                    Expanded(
-                      child: Stack(
-                        children: [
-                          _HomeCollectionCardContainer(
-                            color: Colors.white,
-                            imageUrl:
-                                context.platformBrightness == Brightness.dark
-                                    ? 'hoodie_dark.png'
-                                    : 'hoodie.png',
-                          ),
-                          Positioned(
-                            left: 45,
-                            right: 0,
-                            top: collectionSize! / 5,
-                            child: _HomeCollectionCardTitle(
-                              title:
-                                  "Men's ${context.platformBrightness == Brightness.dark ? 'hats' : 'hoodies'}",
-                              titleColor: Colors.white,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                    _HomeHorizontalCard(collectionSize: collectionSize),
                   ],
                 ),
               ),

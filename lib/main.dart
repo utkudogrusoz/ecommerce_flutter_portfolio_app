@@ -1,6 +1,7 @@
+import 'package:ecommerce_portolio_app/core/initialize/navigation/navigation_route.dart';
+import 'package:ecommerce_portolio_app/core/initialize/navigation/navigation_service.dart';
 import 'package:ecommerce_portolio_app/core/theme/themes.dart';
 import 'package:ecommerce_portolio_app/feature/auth/view/login_view.dart';
-//import 'package:ecommerce_portolio_app/feature/home/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -24,6 +25,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeClass.lightTheme,
       darkTheme: ThemeClass.darkTheme,
       themeMode: ThemeMode.system,
+      onGenerateRoute: NavigationRoute.instance.generateRoute,
+      navigatorKey: NavigationService.instance.navigatorKey,
       home: const LoginView(),
     );
   }

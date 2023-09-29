@@ -1,4 +1,5 @@
-import 'package:ecommerce_portolio_app/feature/home/view/home_view.dart';
+import 'package:ecommerce_portolio_app/core/constants/navigation_constant.dart';
+import 'package:ecommerce_portolio_app/core/initialize/navigation/navigation_service.dart';
 import 'package:flutter/material.dart';
 
 class AuthViewModel extends ChangeNotifier {
@@ -10,11 +11,9 @@ class AuthViewModel extends ChangeNotifier {
   void loginAccount({BuildContext? context}) {
     if (loginTextEditingController!.text != '' &&
         passwordTextEditingController!.text != '') {
-      Navigator.push(
-        context!,
-        MaterialPageRoute(
-          builder: (context) => const HomeView(),
-        ),
+      NavigationService.instance.navigateToPage(
+        path: NavigationConstants.HOME_VIEW,
+        data: loginTextEditingController!.text,
       );
     }
   }

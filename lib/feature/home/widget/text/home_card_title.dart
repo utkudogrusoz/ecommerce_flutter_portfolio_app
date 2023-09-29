@@ -1,7 +1,11 @@
-part of '../home_view.dart';
+import 'package:flutter/material.dart';
 
-class _HomeCollectionCardTitle extends StatelessWidget {
-  const _HomeCollectionCardTitle({this.title, this.titleColor});
+class HomeCardTitle extends StatelessWidget {
+  const HomeCardTitle({
+    this.title,
+    this.titleColor,
+    super.key,
+  });
   final String? title;
   final Color? titleColor;
 
