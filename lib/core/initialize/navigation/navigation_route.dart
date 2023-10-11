@@ -10,10 +10,11 @@ class NavigationRoute {
 
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
-      case NavigationConstants.HOME_VIEW:
+      case NavigationConstants.homeView:
         return normalNavigate(
-            HomeView(homeCollectionTitle: args.arguments.toString()),
-            NavigationConstants.HOME_VIEW);
+          HomeView(homeCollectionTitle: args.arguments.toString()),
+          NavigationConstants.homeView,
+        );
 
       /* case NavigationConstants.TEST_VIEW:
         return normalNavigate(TestsView(), NavigationConstants.TEST_VIEW);
@@ -41,7 +42,7 @@ class NavigationRoute {
     }
   }
 
-  MaterialPageRoute normalNavigate(Widget widget, String pageName) {
+  MaterialPageRoute<dynamic> normalNavigate(Widget widget, String pageName) {
     return MaterialPageRoute(
       builder: (context) => widget,
       settings: RouteSettings(name: pageName),

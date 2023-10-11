@@ -12,7 +12,7 @@ class AuthViewModel extends ChangeNotifier {
     if (loginTextEditingController!.text != '' &&
         passwordTextEditingController!.text != '') {
       NavigationService.instance.navigateToPage(
-        path: NavigationConstants.HOME_VIEW,
+        path: NavigationConstants.homeView,
         data: loginTextEditingController!.text,
       );
     }

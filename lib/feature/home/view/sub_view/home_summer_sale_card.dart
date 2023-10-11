@@ -16,7 +16,7 @@ class _HomeSummerSaleCard extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: HomeCardTitle(
-                title: 'Summer sale',
+                title: StringConstant.summerSaleTitle,
                 titleColor: context.colorScheme.primary,
               ),
             ),

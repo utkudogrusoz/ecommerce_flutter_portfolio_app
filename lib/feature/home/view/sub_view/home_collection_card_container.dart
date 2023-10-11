@@ -18,14 +18,14 @@ class _HomeCollectionCardContainer extends StatelessWidget {
           HomeImageCard(
             color: Colors.white,
             imageUrl:
-                MediaQuery.of(context!).platformBrightness == Brightness.dark
-                    ? 'collection_dark.png'
-                    : 'collection.png',
+                context.platformBrightness == Brightness.dark
+                    ? ImageConstant.collectionDark.toPng
+                    : ImageConstant.collectionLight.toPng,
           ),
           Align(
             alignment: Alignment.bottomRight,
             child: Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: HomeCardTitle(
                 title: homeCollectionTitle,
                 titleColor: Colors.white,

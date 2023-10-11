@@ -5,6 +5,7 @@ class HomeImageCard extends StatelessWidget {
     this.color,
     this.imageUrl,
     this.child,
+    super.key,
   });
   final Color? color;
   final Widget? child;
@@ -12,7 +13,6 @@ class HomeImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String _baseAsset = 'assets/images/';
     return Container(
       decoration: imageUrl == null
           ? BoxDecoration(color: color)
@@ -21,7 +21,7 @@ class HomeImageCard extends StatelessWidget {
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage(
-                  _baseAsset + imageUrl!,
+                  imageUrl!,
                 ),
               ),
             ),

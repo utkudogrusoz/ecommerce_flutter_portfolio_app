@@ -12,16 +12,17 @@ class _HomeHorizontalCard extends StatelessWidget {
           HomeImageCard(
             color: Colors.white,
             imageUrl: context.platformBrightness == Brightness.dark
-                ? 'hoodie_dark.png'
-                : 'hoodie.png',
+                ? ImageConstant.hoodieDark.toPng
+                : ImageConstant.hoodieLight.toPng,
           ),
           Positioned(
             left: 45,
             right: 0,
             top: collectionSize! / 5,
             child: HomeCardTitle(
-              title:
-                  "Men's ${context.platformBrightness == Brightness.dark ? 'hats' : 'hoodies'}",
+              title: context.platformBrightness == Brightness.dark
+                  ? StringConstant.menHatsTitle
+                  : StringConstant.menHoodieTitle,
               titleColor: Colors.white,
             ),
           )

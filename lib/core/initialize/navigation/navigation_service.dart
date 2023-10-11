@@ -1,4 +1,4 @@
-import 'package:ecommerce_portolio_app/core/initialize/navigation/INavigationService.dart';
+import 'package:ecommerce_portolio_app/core/initialize/navigation/i_navigation_service.dart';
 import 'package:flutter/material.dart';
 
 class NavigationService implements INavigationService {

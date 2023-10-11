@@ -1,3 +1,5 @@
+import 'package:ecommerce_portolio_app/core/constants/string_constant.dart';
+import 'package:ecommerce_portolio_app/core/enums/image_constant.dart';
 import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
 import 'package:ecommerce_portolio_app/feature/home/widget/image/home_image_card.dart';
 import 'package:ecommerce_portolio_app/feature/home/widget/text/home_card_title.dart';

@@ -1,3 +1,4 @@
+import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
 import 'package:ecommerce_portolio_app/feature/auth/viewmodel/auth_view_model.dart';
 import 'package:ecommerce_portolio_app/feature/auth/widget/card/social_account_card.dart';
 import 'package:ecommerce_portolio_app/widget/button/custom_button.dart';
@@ -5,7 +6,6 @@ import 'package:ecommerce_portolio_app/widget/text/auth_title_text.dart';
 import 'package:ecommerce_portolio_app/widget/textfield/auth_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
 
 final _authViewModel = ChangeNotifierProvider<AuthViewModel>((ref) {
   return AuthViewModel();

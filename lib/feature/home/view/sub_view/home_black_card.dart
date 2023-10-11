@@ -10,9 +10,9 @@ class _HomeBlackCard extends StatelessWidget {
         children: [
           HomeImageCard(
             color: Colors.white,
-            imageUrl: 'black.png',
+            imageUrl: ImageConstant.black.toPng,
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomLeft,
             child: Padding(
               padding: EdgeInsets.symmetric(
@@ -20,7 +20,7 @@ class _HomeBlackCard extends StatelessWidget {
                 vertical: 32,
               ),
               child: HomeCardTitle(
-                title: 'Black',
+                title: StringConstant.blackTitle,
                 titleColor: Colors.white,
               ),
             ),
