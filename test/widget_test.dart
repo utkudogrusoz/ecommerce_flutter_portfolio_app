@@ -6,6 +6,7 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:ecommerce_portolio_app/core/theme/themes.dart';
+import 'package:ecommerce_portolio_app/feature/home/view/home_view.dart';
 import 'package:ecommerce_portolio_app/widget/button/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -17,16 +18,15 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
       MaterialApp(
-        theme: ThemeClass.lightTheme,
-        darkTheme: ThemeClass.darkTheme,
-        themeMode: ThemeMode.system,
-        home: const CustomButton(
-          text: 'LOGIN',
-        ),
-      ),
+          theme: ThemeClass.lightTheme,
+          darkTheme: ThemeClass.darkTheme,
+          themeMode: ThemeMode.system,
+          home:const HomeView(
+            homeCollectionTitle: 'Utku',
+          )),
     );
 
-    final titleFinder = find.text('LOGIN');
+    final titleFinder = find.text('Utku');
 
     expect(titleFinder, findsOneWidget);
 

@@ -32,21 +32,18 @@ class HomeView extends StatelessWidget {
                       : 'collection.png',
             ),
             Expanded(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: Column(
-                        children: [
-                          _HomeSummerSaleCard(),
-                          _HomeBlackCard(),
-                        ],
-                      ),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: Column(
+                      children: [
+                        _HomeSummerSaleCard(),
+                        _HomeBlackCard(),
+                      ],
                     ),
-                    _HomeHorizontalCard(collectionSize: collectionSize),
-                  ],
-                ),
+                  ),
+                  _HomeHorizontalCard(collectionSize: collectionSize),
+                ],
               ),
             ),
           ],
