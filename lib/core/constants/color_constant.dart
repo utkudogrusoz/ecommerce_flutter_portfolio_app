@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ColorConstant {
+  const ColorConstant._();
+
   // Light Color
   static const Color lightPrimaryColor = Color(0xffdb3022);
   static const Color lightBackgroundColor = Color(0xfff9f9f9);
@@ -8,7 +10,6 @@ class ColorConstant {
   static const Color lightTitleTextColor = Colors.black;
   static const Color lightTextFieldBackgroundColor = Colors.white;
   static const Color lightTextFieldLabelColor = Color(0xff9B9B9B);
-  
 
 // Dark color
   static const Color darkPrimaryColor = Color(0xffef3651);

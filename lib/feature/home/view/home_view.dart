@@ -27,9 +27,9 @@ class HomeView extends StatelessWidget {
               homeCollectionTitle: homeCollectionTitle,
               color: Colors.white,
               imageUrl:
-                  MediaQuery.of(context).platformBrightness == Brightness.dark
-                      ? 'collection_dark.png'
-                      : 'collection.png',
+                  context.platformBrightness == Brightness.dark
+                      ? ImageConstant.collectionDark.toPng
+                      : ImageConstant.collectionLight.toPng,
             ),
             Expanded(
               child: Row(

@@ -3,7 +3,7 @@ import 'package:ecommerce_portolio_app/feature/auth/viewmodel/auth_view_model.da
 import 'package:ecommerce_portolio_app/feature/auth/widget/card/social_account_card.dart';
 import 'package:ecommerce_portolio_app/widget/button/custom_button.dart';
 import 'package:ecommerce_portolio_app/widget/text/auth_title_text.dart';
-import 'package:ecommerce_portolio_app/widget/textfield/auth_text_field.dart';
+import 'package:ecommerce_portolio_app/feature/auth/widget/textfield/auth_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -57,6 +57,10 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     labelText: 'Password',
                     textEditingController:
                         ref.read(_authViewModel).passwordTextEditingController,
+                    textIsHidden: ref.watch(_authViewModel).passwordVisibility,
+                    onPressed: () {
+                      ref.read(_authViewModel).changePasswordVisibility();
+                    },
                   ),
                   const SizedBox(
                     height: 16,

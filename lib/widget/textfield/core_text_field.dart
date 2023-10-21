@@ -2,8 +2,8 @@ import 'package:ecommerce_portolio_app/core/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AuthTextField extends ConsumerStatefulWidget {
-  const AuthTextField({
+class CoreTextField extends ConsumerStatefulWidget {
+  const CoreTextField({
     @required this.labelText,
     @required this.textEditingController,
     super.key,
@@ -12,10 +12,10 @@ class AuthTextField extends ConsumerStatefulWidget {
   final String? labelText;
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _AuthTextFieldState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _CoreTextFielddState();
 }
 
-class _AuthTextFieldState extends ConsumerState<AuthTextField> {
+class _CoreTextFielddState extends ConsumerState<CoreTextField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
